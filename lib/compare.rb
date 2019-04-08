@@ -1,11 +1,11 @@
 class Compare
 
-  def initialize
+  def initialize(contender, opponent)
     @contender = contender
-    @opponent = opponents
+    @opponent = opponent
   end
 
-  def winner
+  def winner?
     if @contender == @opponent
       puts "It's a draw"
     elsif @contender == "rock" &&@opponent == "scissors"

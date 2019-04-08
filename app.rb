@@ -1,7 +1,13 @@
 require 'sinatra/base'
+require './lib/compare'
+require './lib/rps'
 
 class Game < Sinatra::Base
   enable :sessions
+
+  before do
+    @rps = RPS.new
+  end
 
   get '/' do
     erb :index
@@ -18,6 +24,23 @@ class Game < Sinatra::Base
     @player_2_name = session[:player_2_name]
     erb :play
   end
+
+
+  get '/rock' do
+    @compare = Compare.new("rock", @rps.option)
+    erb :win
+  end
+
+  get '/paper' do
+    @compare = Compare.new("paper", @rps.option)
+    erb :win
+  end
+
+  get '/scissors' do
+    @compare = Compare.new("scissors", @rps.option)
+    erb :win
+  end
+
 
   run if app_file == $0
 end

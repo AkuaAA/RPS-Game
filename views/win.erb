@@ -1,0 +1,27 @@
+<div>
+  <h2>Player 1 chose:   <%= @compare.contender%></h2><br><br>
+</div>
+
+ <div>
+   <h2>:Player 2 chose  <%= @compare.opponent %></h2><br><br>
+ </div><br>
+
+ <h2><%= @compare.winner? %></h2>
+
+ <div style="width:100%;height:0;padding-bottom:67%;position:relative;">
+   <iframe src="https://giphy.com/embed/3oz8xAFtqoOUUrsh7W" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen>
+   </iframe>
+ </div>
+
+   <p>
+     <a href="https://giphy.com/gifs/studiosoriginals-3oz8xAFtqoOUUrsh7W"></a>
+   </p>
+
+   <div style="text-align:center">
+  </div>
+
+  <form method="get" action="/play">
+     <br><button type="submit" class="btn btn-secondary">Play Again</button>
+ </form>
+
+</div>
